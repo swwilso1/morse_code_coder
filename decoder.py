@@ -3,12 +3,13 @@
 from morse_code import *
 from gpiozero import LightSensor
 from time import sleep, time
+from commands import getstatusoutput
 
 class Decoder(object):
 	
 	def __init__(self, sensorNumber):
 
-		self.__sensor = LightSensor(sensorNumber)
+		self.__sensor = LightSensor(sensorNumber,threshold=0.5)
 			
 		self.__sensitivityThreshold = 0.5
 
@@ -134,4 +135,5 @@ res = readMessage(.5, decoder)
 
 print "Received the following via Morse code"
 print res
+# getstatusoutput('/usr/local/bin/speak "' + res + '"')
 

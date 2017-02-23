@@ -38,7 +38,7 @@ class LightEncoder(object):
 # End LightEncoder
 
 
-encoder = LightEncoder(15)
+encoder = LightEncoder(24)
 
 text = raw_input("Enter text to encode: ")
 
